@@ -77,3 +77,23 @@ function Missing(arr) {
     return console.log(`Missing number: ${missing}`);
 }
 Missing([1, 2, 4, 5]);
+
+
+// Longest Substring Without Repeating Characters
+
+var longestSubstring = function(str) {
+    let seen = new Set();
+    let left = 0;
+    let maxLen = 0;
+
+    for (let right = 0; right < str.length; right++) {
+        while (seen.has(str[right])) {
+            seen.delete(str[left]);
+            left++;
+        }
+        seen.add(str[right]);
+        maxLen = Math.max(maxLen, right - left + 1);
+    }
+
+    return maxLen;
+};
