@@ -1,1 +1,131 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Week 2 Practice Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Week 2 Practice Challenge</h1>
+    <h3>Dropdown menu you can also open with the keyboard</h3><br>
+    <nav>
+        <div class="navbar">
+            <div class="logo">My Logo</div>
+            <div class="navlinks">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li>
+                        <select name="language" id="language-select" tabindex="0" aria-label="Select Language">
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="fr">French</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            <div class="search">
+                <input type="text" id="search" placeholder="Search items...">
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+
+    </nav>
+    <br>
+    <hr><br>
+    <div>
+        <h3>Show/hide password toggle</h3><br>
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your username"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password">
+        <button id="showPassword">Show Password</button>
+    </div><br>
+    <hr><br>
+    <div class="popup">
+        <h3>A popup window made with plain JS</h3>
+        <p>Click the button to open the popup window created using plain JavaScript.</p><br>
+        <button id="openPopup" style="margin-left:20px">Open Popup</button><br><br>
+        <hr><br>
+    </div><br>
+    <hr><br>
+
+    <div class="animation">
+        <h3>An animation that triggers when you scroll</h3>
+        <p>Scroll down to see the animation in action!</p>
+        <p>Animated by css</p>
+        <div class="animate-css">
+            <div class="one">1</div>
+            <div class="two">2</div>
+            <div class="three">3</div>
+        </div>
+        <p>Animated by js</p>
+        <div class="animate-js">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+    </div><br>
+    <hr><br>
+
+    <div class="card">
+        <h3>A card list where you can add and remove items</h3><br>
+        <div class="card-container">
+            <input type="text" id="itemInput" placeholder="Enter item">
+            <button id="addItem">Add Item</button>
+            <input type="text" id="searchBox" placeholder="Search items...">
+
+        <ul id="itemsList">
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Mango</li>
+            <li>Orange</li>
+            <li>Grapes</li>
+            <li>Pineapple</li>
+        </ul>
+        </div>
+    </div><br>
+    <hr><br>
+
+    <!-- <div class="searchbox">
+        <h3>A search box that filters results live as you type</h3><br>
+        <i class="fa fa-search"></i>
+        <ul id="itemsList">
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Mango</li>
+            <li>Orange</li>
+            <li>Grapes</li>
+            <li>Pineapple</li>
+        </ul>
+    </div><br><hr><br> -->
+    <div class="stopwatch">
+        <h3>Stop watch using plain js</h3>
+        <h1 id="display">00:00:00</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+    </div><br>
+    <hr><br>
+
+    <div class="timer">
+        <h3>Timer using plain js</h3><br>
+        <input type="number" id="timerInput" placeholder="Enter seconds"><br><br>
+        <button id="timerStart">Start Timer</button>
+        <button id="timerStop">Stop Timer</button>
+        <button id="timerReset">Reset Timer</button>
+        <h1 id="timerDisplay">00:00:00</h1>
+    </div><br>
+    <hr><br>
+
+</body>
+<script src="script.js"></script>
+
+</html>
