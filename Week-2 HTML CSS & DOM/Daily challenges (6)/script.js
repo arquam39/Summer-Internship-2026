@@ -118,3 +118,22 @@ pg4.addEventListener("click", () => {
 pg5.addEventListener("click", () => {
     pageDisplay(page5);
 })
+
+
+// 6. Remember an answer so you don't ask twice
+
+let localName = document.getElementById("name");
+const setname = document.querySelector(".setname");
+
+setname.addEventListener("click", () => {
+    localStorage.setItem("name", localName.value );
+    localName.value = ""
+});
+
+const getname = document.querySelector(".getname");
+
+getname.addEventListener("click", () => {
+    localName.value = localStorage.getItem("name");
+});
+
+
