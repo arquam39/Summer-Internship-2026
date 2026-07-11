@@ -200,18 +200,6 @@ myPromiseAll([p1, p2, p3])
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // function saveData(data) {
 //     return new Promise((resolve, reject) => {
 //         let speed = Math.floor(Math.random() * 10) + 1;
