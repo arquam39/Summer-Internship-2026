@@ -8,7 +8,7 @@ function myMap(list, operation) {
         mapped.push(operation(item))
 
     } return console.log(mapped);
-}
+} 
 
 myMap(list1, x => x * 2);
 
