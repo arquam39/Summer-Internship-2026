@@ -1,4 +1,3 @@
-
 // 1. Find the Second Highest Score
 let obj = [
     { name: "Ali", score: 110 },
@@ -176,9 +175,9 @@ if (localStorage.getItem("theme")) {
 
 // 36. Image Slider
 let images = [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg"
+    "img/img1.jfif",
+    "img/img2.jfif",
+    "img/img3.jfif",
 ];
 let index = 0;
 let img = document.getElementById("image");
@@ -192,17 +191,17 @@ document.getElementById("next")
         }
         img.src = images[index];
     }
-document.getElementById("previous").addEventListener("clickk",()=>{
-    index --;
-    if(index <=0){
-        index = images.length-1;
+document.getElementById("previous").addEventListener("click", () => {
+    index--;
+    if (index < 0) {
+        index = images.length - 1;
     }
-    img.src= images[index];
+    img.src = images[index];
 })
 
 // 38. Drag and Drop List
-let items = document.querySelectorAll("li");
-items.forEach(item => {
+let itemss = document.querySelectorAll("li");
+itemss.forEach(item => {
     item.addEventListener(
         "dragstart",
         () => {
@@ -214,3 +213,63 @@ items.forEach(item => {
             item.style.opacity = "1";
         })
 })
+
+// 41. Promise Timeout
+// function fetchData() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve("User Data");
+//         }, 3000)
+//     })
+// }
+// function timeoutPromise(time) {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             reject("Timeout");
+//         }, time)
+//     })
+// }
+// Promise.race([
+//     fetchData(),
+//     timeoutPromise(5000)
+// ])
+//     .then(result => {
+//         console.log(result);
+//     })
+//     .catch(error => {
+//         console.log(error);
+//     });
+
+
+let url = "https://catfact.ninja/fact";
+fetch(url).then((res) => {
+    // console.log(res)
+    return res.json()
+})
+    .then(data => {
+        console.log(data)
+        return data;
+    })
+    .then(data => {
+        console.log(data.fact);
+        return data
+    })
+    .then(data => {
+        console.log(data.length);
+    })
+    .catch(err => {
+        console.log(err)
+    })
+
+async function getFact() {
+    try {
+        let response = await fetch(url);
+        console.log(response);
+        let data = await response.json();
+        console.log(data);
+        console.log(data.fact)
+    }
+    catch(err){
+        console.log("error")
+    }
+}getFact()
