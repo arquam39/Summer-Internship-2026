@@ -199,3 +199,18 @@ document.getElementById("previous").addEventListener("clickk",()=>{
     }
     img.src= images[index];
 })
+
+// 38. Drag and Drop List
+let items = document.querySelectorAll("li");
+items.forEach(item => {
+    item.addEventListener(
+        "dragstart",
+        () => {
+            item.style.opacity = "0.5";
+        })
+    item.addEventListener(
+        "dragend",
+        () => {
+            item.style.opacity = "1";
+        })
+})
