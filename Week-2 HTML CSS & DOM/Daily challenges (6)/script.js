@@ -121,6 +121,44 @@ pg5.addEventListener("click", () => {
 
 
 // 6. Remember an answer so you don't ask twice
+const cache = {};
+function memoize(fn) {
+    return function (id) {
+        if (!cache[id]) {
+            console.log(`fetching user ${id}`)
+            let result = fn(id)
+            cache[id] = result
+            return console.log(result)
+        } else {
+            console.log(`fetching user from cache ${id}`)
+            return console.log(cache[id])
+        }
+    }
+}
+
+function fetchUser(id) {
+    // console.log(`fetching user ${id}`)
+    return {
+        id: id,
+        name: "user" + id
+    }
+}
+
+const getUser = memoize(fetchUser);
+
+getUser(5);
+getUser(5);
+getUser(7);
+
+
+
+
+
+
+
+
+
+
 
 let localName = document.getElementById("name");
 const setname = document.querySelector(".setname");
