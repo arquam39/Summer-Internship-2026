@@ -1,6 +1,6 @@
 // 1. Find Duplicate Numbers
 let list = [1, 2, 3, 4, 2, 5, 6, 3, 1]
-
+ 
 function findDub(arr) {
     let result = []
     for (i = 0; i < arr.length; i++) {
