@@ -1,153 +1,153 @@
-// let products = [
-//     { category: "Electronics", product: "Laptop", price: 1000 },
-//     { category: "Clothing", product: "Shirt", price: 50 },
-//     { category: "Electronics", product: "Phone", price: 700 },
-//     { category: "Clothing", product: "Jeans", price: 80 },
-//     { category: "Groceries", product: "Milk", price: 20 }
-// ];
+let products = [
+    { category: "Electronics", product: "Laptop", price: 1000 },
+    { category: "Clothing", product: "Shirt", price: 50 },
+    { category: "Electronics", product: "Phone", price: 700 },
+    { category: "Clothing", product: "Jeans", price: 80 },
+    { category: "Groceries", product: "Milk", price: 20 }
+];
 
-// function group(arr) {
-//     let result = arr.reduce((acc, items) => {
-//         if (!acc[items.category]) {
-//             acc[items.category] = items.price
+function group(arr) {
+    let result = arr.reduce((acc, items) => {
+        if (!acc[items.category]) {
+            acc[items.category] = items.price
 
-//         } else {
-//             acc[items.category] += items.price
-//         } return acc
-//     }, []); return result.sort();
+        } else {
+            acc[items.category] += items.price
+        } return acc
+    }, []); return result.sort();
 
-// }
-// console.log(group(products))
+}
+console.log(group(products))
 
-// // 
-// let list = [1, 2, 3, 5, 6, 7, 9, 10, 12]
-// function pair(list) {
-//     let result = [];
-//     let left = 0;
-//     let right = 0;
-//     for (i = 0; i < list.length; i++) {
-//         left = list[i]
-//         right = list[i]
-//         while (i + 1 < list.length && list[i + 1] === right + 1) {
-//             i++;
-//             right = list[i];
-//         }
-//         if (left == right) {
-//             result.push(`"${left}"`)
-//         } else {
-//             result.push(`"${left}-${right}"`)
-//         }
-//     } return result
-// }
-// console.log(pair(list))
+// 
+let list = [1, 2, 3, 5, 6, 7, 9, 10, 12]
+function pair(list) {
+    let result = [];
+    let left = 0;
+    let right = 0;
+    for (i = 0; i < list.length; i++) {
+        left = list[i]
+        right = list[i]
+        while (i + 1 < list.length && list[i + 1] === right + 1) {
+            i++;
+            right = list[i];
+        }
+        if (left == right) {
+            result.push(`"${left}"`)
+        } else {
+            result.push(`"${left}-${right}"`)
+        }
+    } return result
+}
+console.log(pair(list))
 
-// let list1 = [1, 3, [3, 4, [3], 34,], [6]]
-// function flat(list) {
-//     result = [];
-//     for (items of list) {
-//         if (Array.isArray(items)) {
-//             result = [...result, ...flat(items)]
-//         }else{
-//             result.push(items)
-//         }
-//     } return result
-// }
-// console.log(flat(list1))
+let list1 = [1, 3, [3, 4, [3], 34,], [6]]
+function flat(list) {
+    result = [];
+    for (items of list) {
+        if (Array.isArray(items)) {
+            result = [...result, ...flat(items)]
+        }else{
+            result.push(items)
+        }
+    } return result
+}
+console.log(flat(list1))
 
-// let stu = [
-//     {name:"Ali", age:20},
-//     {name:"Ahmed", age:25},
-//     {name:"Sara", age:20},
-//     {name:"John", age:25}
-// ];
-// function red (obj){
-//     let result = obj.reduce((acc,items)=>{
-//         if(!acc[items.age]){
-//             acc[items.age] = [];
-//         }
-//         acc[items.age].push(items.name)
-//         return acc;
-//     },{})
-//     return result
-// }
-// console.log(red(stu))
+let stu = [
+    {name:"Ali", age:20},
+    {name:"Ahmed", age:25},
+    {name:"Sara", age:20},
+    {name:"John", age:25}
+];
+function red (obj){
+    let result = obj.reduce((acc,items)=>{
+        if(!acc[items.age]){
+            acc[items.age] = [];
+        }
+        acc[items.age].push(items.name)
+        return acc;
+    },{})
+    return result
+}
+console.log(red(stu))
 
-// function createCounter() {
-//     let i = 0
-//     return function () {
-//         i++;
-//         console.log(i)
-//     }
-// }
-
-
-// const counter = createCounter();
-
-// counter();
-// counter();
-// counter();
+function createCounter() {
+    let i = 0
+    return function () {
+        i++;
+        console.log(i)
+    }
+}
 
 
-// function createAccount(initial) {
-//     amount = initial
-//     return {
-//         deposit(value) {
-//             amount += value;
-//             console.log(` ${value} Deposited`)
-//         },
-//         withdraw(value) {
-//             if (value <= amount) {
-//                 amount -= value
-//             console.log(` ${value} Withdeaw`)
-//             }
-//         },
-//         balance(){
-//             console.log(`Balance is ${amount}`)
-//         }
+const counter = createCounter();
 
-//     }
-// }
-// const account = createAccount(1000);
-// account.deposit(500);
-// account.withdraw(300);
-// account.balance();
+counter();
+counter();
+counter();
 
 
-// const users = [
-//     { name: "Ali", age: 20 },
-//     { name: "Ahmed", age: 25 },
-//     { name: "Sara", age: 22 }
-// ];
+function createAccount(initial) {
+    amount = initial
+    return {
+        deposit(value) {
+            amount += value;
+            console.log(` ${value} Deposited`)
+        },
+        withdraw(value) {
+            if (value <= amount) {
+                amount -= value
+            console.log(` ${value} Withdeaw`)
+            }
+        },
+        balance(){
+            console.log(`Balance is ${amount}`)
+        }
 
-// function getNames(users) {
-//     return users.map(user => {
-//         return user.name;
-//     });
-// }
+    }
+}
+const account = createAccount(1000);
+account.deposit(500);
+account.withdraw(300);
+account.balance();
 
-// console.log(getNames(users));
 
-// function counter() {
-//     for (var i = 0; i < 3; i++) {
-//         setTimeout(() => {
-//             console.log(i);
-//         }, 1000);
-//     }
-// }
+const users = [
+    { name: "Ali", age: 20 },
+    { name: "Ahmed", age: 25 },
+    { name: "Sara", age: 22 }
+];
 
-// counter();
+function getNames(users) {
+    return users.map(user => {
+        return user.name;
+    });
+}
 
-// console.log("Start");
+console.log(getNames(users));
 
-// setTimeout(() => {
-//     console.log("Timeout");
-// }, 0);
+function counter() {
+    for (var i = 0; i < 3; i++) {
+        setTimeout(() => {
+            console.log(i);
+        }, 1000);
+    }
+}
 
-// Promise.resolve().then(() => {
-//     console.log("Promise");
-// });
+counter();
 
-// console.log("End");
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Timeout");
+}, 0);
+
+Promise.resolve().then(() => {
+    console.log("Promise");
+});
+
+console.log("End");
 
 
 
