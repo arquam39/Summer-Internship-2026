@@ -324,3 +324,54 @@ function merge(arr) {
 }
 
 console.log(merge(arr26))
+
+
+// Create Nested Object
+function nestedObj(depth){
+    if (depth == 0){
+        return 
+    }
+    return{
+        value:depth,
+        child:nestedObj(depth-1)
+    }
+}
+console.log(nestedObj(6))
+
+// valid Parenthesis
+function isValid(str){
+    let stack = [];
+    let temp = {
+        ")":"(",
+        "]":"[",
+        "}":"{",
+    }
+    for (items of str){
+        if(items === "(" ||items === "[" || items === "{"){
+            stack.push(items)
+        }else if (stack.pop() !== temp[items]){
+            return false
+        }
+    }
+    return stack.length === 0
+}
+console.log(isValid("({[]})"))
+
+// longest substring without repeating characters
+
+function longestSub(str){
+
+    let left = 0;
+    let max = 0;
+    let result = new Set() ;
+    for ( right=0; right<str.length; right++){
+        while(result.has(str[right])){
+            result.delete(str[left])
+            left++
+        }
+        result.add(str[right]);
+        max = Math.max(max,right-left+1)
+    }
+    return result
+}
+console.log(longestSub("aabbbccabcdffddabcdf"))
