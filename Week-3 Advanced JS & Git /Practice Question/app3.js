@@ -1,6 +1,6 @@
 // 1. Find Duplicate Numbers
 let list = [1, 2, 3, 4, 2, 5, 6, 3, 1]
- 
+
 function findDub(arr) {
     let result = []
     for (i = 0; i < arr.length; i++) {
@@ -230,11 +230,11 @@ console.log(zeroOrder(list5))
 
 // 21. Longest Word
 let str3 = "I love learning JavaScript"
-function longestWord(str){
+function longestWord(str) {
     let temp = str.split(" ")
     let max = temp[0]
-    for(i=0; i<temp.length; i++){
-        if(temp[i].length > max.length){
+    for (i = 0; i < temp.length; i++) {
+        if (temp[i].length > max.length) {
             max = temp[i]
         }
     }
@@ -243,10 +243,84 @@ function longestWord(str){
 console.log(longestWord(str3))
 
 // 22. Reverse Words
-function reverseWord (str){
+function reverseWord(str) {
     let temp = str.split(" ").reverse().join(" ")
     return temp
 }
 console.log(reverseWord(str3))
 
+// 23. Anagram
+let str4 = "lsten"
+let str5 = "tenls"
 
+function anagram(str1, str2) {
+    if (str1.length != str2.length) {
+        return false;
+    }
+    let result = {};
+    for (items of str1) {
+        if (!result[items]) {
+            result[items] = 1
+        } else {
+            result[items]++;
+        }
+    }
+    for (items of str2) {
+        if (!result[items]) {
+            return false;
+        } else {
+            result[items]--;;
+        }
+    } return true
+}
+console.log(anagram(str4, str5))
+
+// 25. Two Sum
+let nums = [2, 7, 11, 15];
+function twoSum(arr, target) {
+    let result = []
+    for (i = 0; i < arr.length; i++) {
+        for (j = 1; j < arr.length; j++) {
+            if (arr[i] + arr[j] == target) {
+                result.push(i, j)
+            }
+        }
+    }
+    return result;
+}
+console.log(twoSum(nums, 9))
+
+// 27. Product Except Self
+let str27 = [1, 2, 3, 4];
+function product(arr) {
+    let result = [];
+    for (i = 0; i < arr.length; i++) {
+        let temp = 1;
+        for (j = 0; j < arr.length; j++) {
+            if (i == j) {
+                continue
+            } else {
+                temp *= arr[j]
+            }
+        } result.push(temp)
+    } return result
+}
+console.log(product(str27))
+
+
+// 26. Merge Intervals
+let arr26 = [[1, 3], [2, 6], [5, 10]];
+function merge(arr) {
+    let result = [];
+    for (i = 0; i < arr.length; i++) {
+        if (i + 1 < arr.length && arr[i][1] >= arr[i + 1][0]) {
+            let temp = [arr[i][0], arr[i + 1][1]];
+            result.push(temp)
+            i++
+        } else {
+            result.push(arr[i])
+        }
+    } return result;
+}
+
+console.log(merge(arr26))
