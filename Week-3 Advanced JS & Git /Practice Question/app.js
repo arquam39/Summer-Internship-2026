@@ -5,7 +5,7 @@ let obj = [
     { name: "Ahmed", score: 105 },
     { name: "Zain", score: 88 }
 ];
-
+ 
 function secondHighest(obj) {
     let high = obj[1];
     let second = obj[0];
