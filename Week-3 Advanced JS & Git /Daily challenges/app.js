@@ -5,7 +5,7 @@ let list1 = [1, 2, 3, 4, 5];
 function myMap(list, operation) {
     let mapped = [];
     for (item of list) {
-        mapped.push(operation(item))
+        mapped.push(operation(item)) 
 
     } return console.log(mapped);
 } 
