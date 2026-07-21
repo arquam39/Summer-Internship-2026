@@ -6,7 +6,7 @@ This repository contains all the weekly tasks, projects, assignments, and learni
 
 ---
  
-## 📌 About
+## 📌 About 
 
 During this internship, I am working on real-world development tasks that strengthen my understanding of modern web development and software engineering concepts.
 
