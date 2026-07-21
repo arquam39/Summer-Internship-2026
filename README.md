@@ -5,7 +5,7 @@ Welcome to my **Summer Internship 2026** repository!
 This repository contains all the weekly tasks, projects, assignments, and learning materials completed during my internship at **InvexTech**. It serves as a record of my progress, showcasing the skills and technologies I learn throughout the internship. 
 
 ---
-
+ 
 ## 📌 About
 
 During this internship, I am working on real-world development tasks that strengthen my understanding of modern web development and software engineering concepts.
