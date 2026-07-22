@@ -366,7 +366,7 @@ function isValid(str){
 }
 console.log(isValid("({[]})"))
 
-// longest substring without repeating chharacters
+// longest substring without repeating characters
 
 function longestSub(str){
 
