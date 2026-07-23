@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>todo App</title>
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <input id="taskInput" placeholder="Enter task" />
-    <button id="addTaskButton">Add Task</button>
-<ul id="taskList"></ul>
+    <div class="container">
+        <h1>📝 Todo App</h1>
+        <div class="input-box">
+            <input type="text" id="taskInput" placeholder="Enter a task...">
+            <button id="addTaskButton">Add</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="todoapp.js"></script>
 </body>
 
-<script src="todoapp.js"></script>
 </html>

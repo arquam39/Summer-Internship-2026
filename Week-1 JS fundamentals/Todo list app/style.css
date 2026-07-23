@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.container {
+    width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+}
+
+input:focus {
+    border-color: #4facfe;
+}
+
+#addTaskButton {
+    background: #4facfe;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#addTaskButton:hover {
+    background: #1d8fff;
+}
+
+#taskList {
+    list-style: none;
+}
+
+#taskList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    background: #f5f7fa;
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+#taskList li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0,0,0,.25);
+}
+
+#taskList span {
+    flex: 1;
+    word-break: break-word;
+    font-size: 17px;
+    color: #333;
+}
+
+#taskList button {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+    color: white;
+}
+
+#taskList button:first-of-type {
+    background: #ff4d4d;
+}
+
+#taskList button:first-of-type:hover {
+    background: #d93636;
+}
+
+#taskList button:last-of-type {
+    background: #28a745;
+}
+
+#taskList button:last-of-type:hover {
+    background: #1d7c33;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+    opacity: 0.7;
+}
