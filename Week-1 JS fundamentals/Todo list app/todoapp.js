@@ -2,7 +2,7 @@
 let task = document.getElementById("taskInput");
 let addTaskButton = document.getElementById("addTaskButton");
 let taskList = document.getElementById("taskList");
-
+let completeAll = document.getElementById("completeAll")
 let tasks = [];
 
 function renderTasks() {
@@ -30,18 +30,31 @@ function renderTasks() {
 
         statusButton.addEventListener("click", function () {
             tasks[index].completed = !tasks[index].completed;
-            renderTasks(); 
+            renderTasks();
         });
 
         item.appendChild(text);
         item.appendChild(deleteButton);
         item.appendChild(statusButton);
-
         taskList.appendChild(item);
     });
 }
 
-addTaskButton.addEventListener("click", function () {
+addTaskButton.addEventListener("click", addTask)
+task.addEventListener("keydown",(event)=>{
+    if(event.key == "Enter"){
+        addTask()
+    }
+})
+
+completeAll.addEventListener("click",()=>{
+    tasks.forEach((task)=>{
+        task.completed = true
+    })
+    renderTasks()
+})
+
+function addTask() {
     if (task.value.trim() === "") return;
     tasks.push({
         text: task.value,
@@ -49,5 +62,4 @@ addTaskButton.addEventListener("click", function () {
     });
     task.value = "";
     renderTasks();
-});
-
+}
